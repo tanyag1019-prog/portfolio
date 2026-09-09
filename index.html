@@ -14,15 +14,18 @@
     theme: {
       extend: {
         colors: {
-          paper: '#FAF7F0',
-          paper2: '#F3EDE1',
-          ink: '#1B1815',
-          ink2: '#4A4540',
+          paper: '#0A0A0C',
+          paper2: '#141317',
+          ink: '#F5F2EF',
+          ink2: '#A79FAA',
           amber: {
             50: '#FBF3E7', 100: '#F5E2C2', 300: '#E4B368', 400: '#D99A3F', 500: '#C2792A', 600: '#A1601E', 700: '#7C4816', 900: '#4A2A0D'
           },
           teal: {
             50: '#EAF3F0', 300: '#6FA895', 500: '#245C4E', 600: '#1B4A3F', 700: '#123329', 900: '#0B231C'
+          },
+          pink: {
+            50: '#2A0E1F', 300: '#FF9FD4', 400: '#FF5FB8', 500: '#FF2D95', 600: '#E01578', 700: '#B10F63'
           }
         },
         fontFamily: {
@@ -35,8 +38,8 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { background-color: #FAF7F0; }
-  ::selection { background: #E4B368; color: #1B1815; }
+  body { background-color: #0A0A0C; }
+  ::selection { background: #FF2D95; color: #0A0A0C; }
 
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
@@ -48,15 +51,15 @@
     background-size: 3px 3px;
   }
 
-  .tag-pill { border: 1px solid rgba(27,24,21,0.12); }
+  .tag-pill { border: 1px solid rgba(245,242,239,0.14); }
 
-  .modal-backdrop { background: rgba(15,13,11,0.72); backdrop-filter: blur(3px); }
+  .modal-backdrop { background: rgba(0,0,0,0.8); backdrop-filter: blur(3px); }
   .modal-panel { max-height: 88vh; }
   .modal-panel::-webkit-scrollbar { width: 8px; }
-  .modal-panel::-webkit-scrollbar-thumb { background: rgba(27,24,21,0.18); border-radius: 8px; }
+  .modal-panel::-webkit-scrollbar-thumb { background: rgba(245,242,239,0.18); border-radius: 8px; }
 
   .card-lift { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
-  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgba(27,24,21,0.25); }
+  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -18px rgba(255,45,149,0.45); border-color: rgba(255,45,149,0.4); }
 
   .underline-grow { position: relative; }
   .underline-grow::after {
@@ -77,14 +80,7 @@
   [data-modal].open { display: flex; }
 
   .scrollbar-thin::-webkit-scrollbar { height: 6px; }
-  .scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(27,24,21,0.2); border-radius: 6px; }
-
-  .blob-mask { border-radius: 63% 37% 54% 46% / 43% 39% 61% 57%; }
-  @keyframes blob-morph {
-    0%, 100% { border-radius: 63% 37% 54% 46% / 43% 39% 61% 57%; }
-    50% { border-radius: 42% 58% 61% 39% / 51% 44% 56% 49%; }
-  }
-  .blob-animate { animation: blob-morph 12s ease-in-out infinite; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(245,242,239,0.2); border-radius: 6px; }
 
   .glow-pulse { animation: glow-pulse 7s ease-in-out infinite; }
   @keyframes glow-pulse { 0%,100% { opacity: .55; transform: scale(1);} 50% { opacity: .85; transform: scale(1.06);} }
@@ -100,10 +96,10 @@
 
   .skill-pill {
     display: inline-flex; align-items: center; gap: 8px;
-    background: #fff; border: 1px solid rgba(27,24,21,0.08);
+    background: #1A1820; border: 1px solid rgba(245,242,239,0.1);
     border-radius: 999px; padding: 8px 16px 8px 8px;
-    font-size: 13px; font-weight: 600; color: #1B1815;
-    box-shadow: 0 8px 18px -12px rgba(27,24,21,0.25);
+    font-size: 13px; font-weight: 600; color: #F5F2EF;
+    box-shadow: 0 8px 20px -12px rgba(255,45,149,0.3);
     white-space: nowrap;
   }
   .skill-dot { width: 22px; height: 22px; border-radius: 999px; flex-shrink: 0; }
@@ -116,13 +112,13 @@
   <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
     <a href="#top" class="font-serif text-lg font-semibold tracking-tight">Tanya Gupta</a>
     <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink2">
-      <a href="#about" class="underline-grow">About</a>
-      <a href="#work" class="underline-grow">Work</a>
-      <a href="#skills" class="underline-grow">Skills</a>
-      <a href="#contact" class="underline-grow">Contact</a>
+      <a href="#about" class="underline-grow hover:text-pink-400 transition-colors">About</a>
+      <a href="#work" class="underline-grow hover:text-pink-400 transition-colors">Work</a>
+      <a href="#skills" class="underline-grow hover:text-pink-400 transition-colors">Skills</a>
+      <a href="#contact" class="underline-grow hover:text-pink-400 transition-colors">Contact</a>
     </nav>
     <button id="menuBtn" aria-label="Open menu" class="md:hidden p-2 -mr-2">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1B1815" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#F5F2EF" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
   </div>
   <div id="mobileMenu" class="hidden md:hidden border-t border-ink/10 bg-paper px-5 py-4 space-y-3 text-sm font-medium">
@@ -135,8 +131,8 @@
 
 <!-- ============ HERO ============ -->
 <section id="about" class="relative overflow-hidden">
-  <div class="glow-pulse absolute top-0 right-0 w-[65vw] max-w-[820px] aspect-square rounded-full bg-[radial-gradient(circle,_#FF7A45_0%,_#FFB020_45%,_transparent_72%)] blur-2xl opacity-70 -translate-y-1/4 translate-x-1/4"></div>
-  <div class="absolute top-24 -left-32 w-[380px] h-[380px] rounded-full bg-teal-300/15 blur-3xl"></div>
+  <div class="glow-pulse absolute top-0 right-0 w-[65vw] max-w-[820px] aspect-square rounded-full bg-[radial-gradient(circle,_#FF2D95_0%,_#7A1258_45%,_transparent_72%)] blur-2xl opacity-60 -translate-y-1/4 translate-x-1/4"></div>
+  <div class="absolute top-24 -left-32 w-[380px] h-[380px] rounded-full bg-fuchsia-500/10 blur-3xl"></div>
 
   <div class="max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-14 md:pb-20 relative">
     <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-8 items-center">
@@ -148,15 +144,15 @@
 
         <div class="mt-9 pt-6 border-t border-ink/10 max-w-xs">
           <p class="font-serif text-2xl font-semibold text-ink">Tanya Gupta</p>
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-teal-600 mt-1">Brand • Strategy • Ideas</p>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-pink-400 mt-1">Brand • Strategy • Ideas</p>
         </div>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="mailto:tanyag1019@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-ink text-paper text-sm font-semibold px-6 py-3 hover:bg-teal-700 transition-colors">
+          <a href="mailto:tanyag1019@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-pink-500/100 text-white text-sm font-semibold px-6 py-3 hover:bg-pink-600 transition-colors shadow-[0_8px_30px_-8px_rgba(255,45,149,0.6)]">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.2 8-6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Email me
           </a>
-          <a href="https://www.linkedin.com/in/tanya-gupta-ba734411a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 text-sm font-semibold px-6 py-3 hover:border-ink hover:bg-white transition-colors">
+          <a href="https://www.linkedin.com/in/tanya-gupta-ba734411a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 text-sm font-semibold px-6 py-3 hover:border-pink-400 hover:text-pink-400 transition-colors">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H4.06V19h2.88V8.5ZM5.5 7.14A1.67 1.67 0 1 0 5.5 3.8a1.67 1.67 0 0 0 0 3.34ZM19.94 19h-2.87v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.85V19h-2.87V8.5h2.76v1.43h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V19Z" fill="currentColor"/></svg>
             LinkedIn
           </a>
@@ -165,7 +161,8 @@
 
       <div class="relative reveal">
         <div class="relative mx-auto max-w-sm">
-          <img src="assets/profile/tanya-profile.jpg" alt="Portrait of Tanya Gupta" class="blob-mask blob-animate relative w-full object-cover shadow-2xl aspect-[4/5]" />
+          <div class="absolute -inset-2.5 rounded-[2rem] bg-gradient-to-br from-pink-500 via-fuchsia-600 to-purple-800 rotate-2"></div>
+          <img src="assets/profile/tanya-profile.jpg" alt="Portrait of Tanya Gupta" class="relative rounded-[1.75rem] w-full object-cover shadow-2xl aspect-[4/5] ring-1 ring-white/10" />
         </div>
       </div>
     </div>
@@ -173,10 +170,10 @@
 </section>
 
 <!-- ============ SECTION 2: BIG VISUAL GALLERY ============ -->
-<section id="work" class="bg-white border-y border-ink/10">
+<section id="work" class="bg-paper2 border-y border-ink/10">
   <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
     <div class="reveal mb-10">
-      <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Selected Campaigns</p>
+      <p class="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">Selected Campaigns</p>
       <h2 class="font-serif text-4xl md:text-5xl font-semibold max-w-2xl leading-[1.05]">Work that made it out into the world.</h2>
     </div>
 
@@ -244,97 +241,35 @@
       <h2 class="font-serif text-3xl md:text-4xl font-semibold leading-tight">A career in figuring things out</h2>
       <p class="mt-5 text-ink2 leading-relaxed">What started with content has grown into a broader curiosity about brands, people and what makes businesses move. Across e-commerce, commercial real estate and digital, I've worked on campaigns, launches and brand initiatives while learning to look beyond the brief, question what's working and find a better way forward.</p>
 
-      <div class="mt-8 border-t border-ink/10">
-        <div class="flex items-center justify-between py-3.5 border-b border-ink/10">
-          <span class="font-semibold text-sm">SEO &amp; Distribution Manager</span>
+      <p class="mt-10 text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">Work Experience</p>
+      <div class="border-t border-ink/10">
+        <button data-open="modal-amazon" class="group w-full flex items-center justify-between py-3.5 border-b border-ink/10 text-left hover:pl-2 transition-all">
+          <span class="font-semibold text-sm group-hover:text-pink-400 transition-colors">SEO &amp; Distribution Manager</span>
           <span class="text-ink2 text-sm hidden sm:block">Amazon</span>
-          <span class="text-ink2 text-xs">2023 → 2025</span>
-        </div>
-        <div class="flex items-center justify-between py-3.5 border-b border-ink/10">
-          <span class="font-semibold text-sm">Associate Content Writer</span>
+          <span class="flex items-center gap-2 text-ink2 text-xs">2023 → 2025 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button data-open="modal-cbre" class="group w-full flex items-center justify-between py-3.5 border-b border-ink/10 text-left hover:pl-2 transition-all">
+          <span class="font-semibold text-sm group-hover:text-pink-400 transition-colors">Associate Content Writer</span>
           <span class="text-ink2 text-sm hidden sm:block">CBRE</span>
-          <span class="text-ink2 text-xs">2022 → 2023</span>
-        </div>
-        <div class="flex items-center justify-between py-3.5 border-b border-ink/10">
-          <span class="font-semibold text-sm">Executive Content Writer</span>
+          <span class="flex items-center gap-2 text-ink2 text-xs">2022 → 2023 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button data-open="modal-tech9" class="group w-full flex items-center justify-between py-3.5 border-b border-ink/10 text-left hover:pl-2 transition-all">
+          <span class="font-semibold text-sm group-hover:text-pink-400 transition-colors">Executive Content Writer</span>
           <span class="text-ink2 text-sm hidden sm:block">Tech9logy Creators</span>
-          <span class="text-ink2 text-xs">2020 → 2021</span>
-        </div>
-        <div class="flex items-center justify-between py-3.5">
-          <span class="font-semibold text-sm">Intern Content Writer</span>
+          <span class="flex items-center gap-2 text-ink2 text-xs">2020 → 2021 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button data-open="modal-vamani" class="group w-full flex items-center justify-between py-3.5 text-left hover:pl-2 transition-all">
+          <span class="font-semibold text-sm group-hover:text-pink-400 transition-colors">Intern Content Writer</span>
           <span class="text-ink2 text-sm hidden sm:block">Vamani Overseas</span>
-          <span class="text-ink2 text-xs">2018 → 2020</span>
-        </div>
+          <span class="flex items-center gap-2 text-ink2 text-xs">2018 → 2020 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Work Experience cards -->
-  <div class="reveal mb-8">
-    <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Work Experience</p>
-    <h3 class="font-serif text-2xl md:text-3xl font-semibold">Tap a role for the full case study.</h3>
-  </div>
-  <div class="reveal grid sm:grid-cols-2 gap-5 mb-20">
-    <button data-open="modal-amazon" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
-      <div class="h-28 bg-gradient-to-br from-[#232F3E] to-[#0F1720] flex items-center justify-between px-6">
-        <div>
-          <p class="text-amber-300 text-xs font-semibold tracking-widest uppercase">Amazon</p>
-          <p class="text-white font-semibold mt-1">SEO &amp; Distribution Manager</p>
-        </div>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-amber-300/80 shrink-0"><path d="M4 15.5c3.5 3 12.5 3 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="9" r="1.4" fill="currentColor"/><circle cx="12" cy="7" r="1.4" fill="currentColor"/><circle cx="17" cy="9.4" r="1.4" fill="currentColor"/><path d="M7 9v3.2M12 7v5M17 9.4v2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </div>
-      <div class="p-5 flex items-center justify-between">
-        <span class="text-sm text-ink2">2.5x engagement growth, organic-first shift</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </button>
-
-    <button data-open="modal-cbre" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
-      <div class="h-28 bg-gradient-to-br from-[#0C3B2E] to-[#123329] flex items-center justify-between px-6">
-        <div>
-          <p class="text-emerald-300 text-xs font-semibold tracking-widest uppercase">CBRE</p>
-          <p class="text-white font-semibold mt-1">Associate Content Writer</p>
-        </div>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-emerald-300/80 shrink-0"><path d="M4 21V9l8-5 8 5v12" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="p-5 flex items-center justify-between">
-        <span class="text-sm text-ink2">Grew CEO's LinkedIn voice, followers +50%</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </button>
-
-    <button data-open="modal-tech9" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
-      <div class="h-28 bg-gradient-to-br from-[#3B1E77] to-[#1E1147] flex items-center justify-between px-6">
-        <div>
-          <p class="text-violet-300 text-xs font-semibold tracking-widest uppercase">Tech9logy Creators</p>
-          <p class="text-white font-semibold mt-1">Executive Content Writer</p>
-        </div>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-violet-300/80 shrink-0"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-      </div>
-      <div class="p-5 flex items-center justify-between">
-        <span class="text-sm text-ink2">B2B campaigns, awarded within year one</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </button>
-
-    <button data-open="modal-vamani" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
-      <div class="h-28 bg-gradient-to-br from-[#7A1E2B] to-[#3D0F16] flex items-center justify-between px-6">
-        <div>
-          <p class="text-rose-300 text-xs font-semibold tracking-widest uppercase">Vamani Overseas</p>
-          <p class="text-white font-semibold mt-1">Intern Content Writer</p>
-        </div>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-rose-300/80 shrink-0"><path d="M12 3c2.5 2.8 3.8 5.9 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.9-3.8-9s1.3-6.2 3.8-9Z" stroke="currentColor" stroke-width="1.5"/></svg>
-      </div>
-      <div class="p-5 flex items-center justify-between">
-        <span class="text-sm text-ink2">Cross-border eCommerce content, AU client</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </button>
-  </div>
-
   <!-- Academic / Live Projects -->
   <div class="reveal mb-8">
-    <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Academic &amp; Live Projects</p>
+    <p class="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-3">Academic &amp; Live Projects</p>
     <h3 class="font-serif text-2xl md:text-3xl font-semibold">Tap a project for the full breakdown.</h3>
   </div>
   <div class="reveal grid sm:grid-cols-2 gap-5">
@@ -403,7 +338,7 @@
   </button>
   <figure class="max-w-3xl w-full">
     <img id="lightboxImg" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-2xl bg-white" />
-    <figcaption id="lightboxCaption" class="text-center text-paper/90 text-sm mt-4"></figcaption>
+    <figcaption id="lightboxCaption" class="text-center text-white/90 text-sm mt-4"></figcaption>
   </figure>
 </div>
 
@@ -443,13 +378,13 @@
 
 <!-- ============ CONTACT / FOOTER ============ -->
 <footer id="contact" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
-  <p class="reveal text-xs font-semibold tracking-widest uppercase text-teal-600 mb-4">Get in touch</p>
+  <p class="reveal text-xs font-semibold tracking-widest uppercase text-pink-400 mb-4">Get in touch</p>
   <div class="reveal flex flex-wrap justify-center gap-4">
-    <a href="mailto:tanyag1019@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-ink text-paper font-semibold px-6 py-3 hover:bg-teal-700 transition-colors">
+    <a href="mailto:tanyag1019@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-pink-500/100 text-white font-semibold px-6 py-3 hover:bg-pink-600 transition-colors shadow-[0_8px_30px_-8px_rgba(255,45,149,0.6)]">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.2 8-6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       tanyag1019@gmail.com
     </a>
-    <a href="https://www.linkedin.com/in/tanya-gupta-ba734411a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 bg-white font-semibold px-6 py-3 hover:border-ink transition-colors">
+    <a href="https://www.linkedin.com/in/tanya-gupta-ba734411a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 font-semibold px-6 py-3 hover:border-pink-400 hover:text-pink-400 transition-colors">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H4.06V19h2.88V8.5ZM5.5 7.14A1.67 1.67 0 1 0 5.5 3.8a1.67 1.67 0 0 0 0 3.34ZM19.94 19h-2.87v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.85V19h-2.87V8.5h2.76v1.43h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V19Z" fill="currentColor"/></svg>
       Connect on LinkedIn
     </a>
@@ -474,27 +409,27 @@
     </div>
     <div class="p-8 md:p-10">
       <div class="grid sm:grid-cols-3 gap-4 mb-8">
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-amber-600">2.5x</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-amber-400">2.5x</p>
           <p class="text-xs text-ink2 mt-1">Engagement growth</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-amber-600">2x</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-amber-400">2x</p>
           <p class="text-xs text-ink2 mt-1">Content views</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-amber-600">Paid → Organic</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-amber-400">Paid → Organic</p>
           <p class="text-xs text-ink2 mt-1">Strategy shift led</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mb-4">What I owned</h4>
       <ul class="space-y-4 text-ink2 leading-relaxed">
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Led a shift in brand visibility strategy from paid distribution to organic growth — 2.5x engagement growth and a doubling of content views.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Developed go-to-market content plans aligned to product launches and seasonal calendars, and expanded distribution by partnering with CSR, merchandising and talent-management teams.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Ran A/B tests and channel reporting — analysing traffic sources, engagement and funnel performance in Parse.ly and Google Analytics to guide content decisions.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Managed agency and creative vendor relationships — defining briefs, running quality governance, and tracking reach, impressions, CTR and engagement.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Built marketing automation workflows in Salesforce Pardot — behaviour-triggered drip campaigns, audience segmentation and lifecycle reporting to improve retention and re-engagement.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Led a shift in brand visibility strategy from paid distribution to organic growth — 2.5x engagement growth and a doubling of content views.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Developed go-to-market content plans aligned to product launches and seasonal calendars, and expanded distribution by partnering with CSR, merchandising and talent-management teams.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Ran A/B tests and channel reporting — analysing traffic sources, engagement and funnel performance in Parse.ly and Google Analytics to guide content decisions.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Managed agency and creative vendor relationships — defining briefs, running quality governance, and tracking reach, impressions, CTR and engagement.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Built marketing automation workflows in Salesforce Pardot — behaviour-triggered drip campaigns, audience segmentation and lifecycle reporting to improve retention and re-engagement.</li>
       </ul>
 
       <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-3">Campaign visuals</p>
@@ -538,26 +473,26 @@
     </div>
     <div class="p-8 md:p-10">
       <div class="grid sm:grid-cols-3 gap-4 mb-8">
-        <div class="rounded-2xl bg-teal-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-teal-600">+50%</p>
+        <div class="rounded-2xl bg-teal-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-teal-400">+50%</p>
           <p class="text-xs text-ink2 mt-1">LinkedIn followers</p>
         </div>
-        <div class="rounded-2xl bg-teal-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-teal-600">Multi-city</p>
+        <div class="rounded-2xl bg-teal-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-teal-400">Multi-city</p>
           <p class="text-xs text-ink2 mt-1">India-wide launch event</p>
         </div>
-        <div class="rounded-2xl bg-teal-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-teal-600">CII</p>
+        <div class="rounded-2xl bg-teal-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-teal-400">CII</p>
           <p class="text-xs text-ink2 mt-1">Chairmanship-aligned voice</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mb-4">What I owned</h4>
       <ul class="space-y-4 text-ink2 leading-relaxed">
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500 shrink-0"></span>Repositioned the CEO's voice from real estate trends to the economy, Budget and policy, aligned with his CII chairmanship, to establish him as an industry authority beyond real estate.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500 shrink-0"></span>Owned brand communication and copywriting for CBRE's LinkedIn, growing followers 50%; ran the day-to-day calendar with creative and business teams and covered internal and CSR events.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500 shrink-0"></span>Led the multi-city event for CBRE's new website launch across India offices, covering branding assets and installation, employee hampers and QR codes; also reviewed and improved site content for consistency and SEO.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500 shrink-0"></span>Promoted industry research reports through digital campaigns, supporting growth in downloads, organic traffic and leads; used performance data to shape what we published next.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500/100 shrink-0"></span>Repositioned the CEO's voice from real estate trends to the economy, Budget and policy, aligned with his CII chairmanship, to establish him as an industry authority beyond real estate.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500/100 shrink-0"></span>Owned brand communication and copywriting for CBRE's LinkedIn, growing followers 50%; ran the day-to-day calendar with creative and business teams and covered internal and CSR events.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500/100 shrink-0"></span>Led the multi-city event for CBRE's new website launch across India offices, covering branding assets and installation, employee hampers and QR codes; also reviewed and improved site content for consistency and SEO.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500/100 shrink-0"></span>Promoted industry research reports through digital campaigns, supporting growth in downloads, organic traffic and leads; used performance data to shape what we published next.</li>
       </ul>
 
       <p class="mt-8 text-xs font-semibold tracking-widest uppercase text-ink2 mb-3">Campaign visuals</p>
@@ -600,30 +535,30 @@
     </div>
     <div class="p-8 md:p-10">
       <div class="grid sm:grid-cols-3 gap-4 mb-8">
-        <div class="rounded-2xl bg-violet-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-violet-600">Year-1 Award</p>
+        <div class="rounded-2xl bg-violet-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-violet-400">Year-1 Award</p>
           <p class="text-xs text-ink2 mt-1">Recognised for client growth</p>
         </div>
-        <div class="rounded-2xl bg-violet-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-violet-600">B2B</p>
+        <div class="rounded-2xl bg-violet-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-violet-400">B2B</p>
           <p class="text-xs text-ink2 mt-1">Full-funnel campaigns</p>
         </div>
-        <div class="rounded-2xl bg-violet-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-violet-600">Cosmo Films</p>
+        <div class="rounded-2xl bg-violet-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-violet-400">Cosmo Films</p>
           <p class="text-xs text-ink2 mt-1">Long-form &amp; web content</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mb-4">What I owned</h4>
       <ul class="space-y-4 text-ink2 leading-relaxed">
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500 shrink-0"></span>Translated client briefs into social media campaign strategy and content pipelines for B2B clients — from proposition and messaging through copy, then working with designers and video teams to final delivery.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500 shrink-0"></span>Delivered drip email campaigns — audience segmentation, copy, scheduling and post-campaign analysis to improve acquisition and conversion.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500 shrink-0"></span>Produced long-form and web content for clients including Cosmo Films — blogs, landing pages and full website copy — and partnered with the CEO on client pitch decks and presentations.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500 shrink-0"></span>Handled the agency's own marketing — website updates, emailers, social media and case studies.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500 shrink-0"></span>Awarded for client growth within the first year of joining — recognised for campaign performance improvement and brand communication consistency across channels.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500/100 shrink-0"></span>Translated client briefs into social media campaign strategy and content pipelines for B2B clients — from proposition and messaging through copy, then working with designers and video teams to final delivery.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500/100 shrink-0"></span>Delivered drip email campaigns — audience segmentation, copy, scheduling and post-campaign analysis to improve acquisition and conversion.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500/100 shrink-0"></span>Produced long-form and web content for clients including Cosmo Films — blogs, landing pages and full website copy — and partnered with the CEO on client pitch decks and presentations.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500/100 shrink-0"></span>Handled the agency's own marketing — website updates, emailers, social media and case studies.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-violet-500/100 shrink-0"></span>Awarded for client growth within the first year of joining — recognised for campaign performance improvement and brand communication consistency across channels.</li>
       </ul>
 
-      <div class="mt-8 rounded-2xl border border-ink/10 bg-white p-5">
+      <div class="mt-8 rounded-2xl border border-ink/10 bg-white/5 p-5">
         <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-2">Client roster context</p>
         <p class="text-sm text-ink2 leading-relaxed">Wrote and strategised for agency clients spanning specialty films &amp; packaging (Cosmo Films), CSR &amp; foundation communications (Cosmo Foundation), and fintech/consumer brands — pitching, positioning and producing content end-to-end.</p>
       </div>
@@ -652,26 +587,26 @@
     </div>
     <div class="p-8 md:p-10">
       <div class="grid sm:grid-cols-3 gap-4 mb-8">
-        <div class="rounded-2xl bg-rose-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-rose-600">Australia</p>
+        <div class="rounded-2xl bg-rose-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-rose-400">Australia</p>
           <p class="text-xs text-ink2 mt-1">Cross-border eCommerce client</p>
         </div>
-        <div class="rounded-2xl bg-rose-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-rose-600">First role</p>
+        <div class="rounded-2xl bg-rose-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-rose-400">First role</p>
           <p class="text-xs text-ink2 mt-1">Start of content writing career</p>
         </div>
-        <div class="rounded-2xl bg-rose-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-rose-600">Multi-format</p>
+        <div class="rounded-2xl bg-rose-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-rose-400">Multi-format</p>
           <p class="text-xs text-ink2 mt-1">Copy, blogs, push &amp; social</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mb-4">What I owned</h4>
       <ul class="space-y-4 text-ink2 leading-relaxed">
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-rose-500 shrink-0"></span>Managed digital content for an Australian eCommerce client — product descriptions, blogs, newsletters, social posts and push notifications — coordinating with internal stakeholders on messaging and deployment.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-rose-500/100 shrink-0"></span>Managed digital content for an Australian eCommerce client — product descriptions, blogs, newsletters, social posts and push notifications — coordinating with internal stakeholders on messaging and deployment.</li>
       </ul>
 
-      <div class="mt-8 rounded-2xl border border-ink/10 bg-white p-5">
+      <div class="mt-8 rounded-2xl border border-ink/10 bg-white/5 p-5">
         <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-2">Client context</p>
         <p class="text-sm text-ink2 leading-relaxed">The client was an Australian online wine &amp; beverage retailer — content had to work across product-detail pages, retention email flows and always-on social, all under one consistent brand voice.</p>
       </div>
@@ -706,20 +641,20 @@
 
       <!-- Stat strip -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-        <div class="rounded-2xl bg-blue-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-blue-700 stat-num">16.8%</p>
+        <div class="rounded-2xl bg-blue-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-blue-300 stat-num">16.8%</p>
           <p class="text-[11px] text-ink2 mt-1">Base churn rate</p>
         </div>
-        <div class="rounded-2xl bg-blue-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-blue-700 stat-num">157</p>
+        <div class="rounded-2xl bg-blue-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-blue-300 stat-num">157</p>
           <p class="text-[11px] text-ink2 mt-1">Priority segment size</p>
         </div>
-        <div class="rounded-2xl bg-blue-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-blue-700 stat-num">66%</p>
+        <div class="rounded-2xl bg-blue-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-blue-300 stat-num">66%</p>
           <p class="text-[11px] text-ink2 mt-1">Segment churn rate</p>
         </div>
-        <div class="rounded-2xl bg-blue-50 p-4 text-center">
-          <p class="font-serif text-2xl font-semibold text-blue-700 stat-num">0.847</p>
+        <div class="rounded-2xl bg-blue-500/10 p-4 text-center">
+          <p class="font-serif text-2xl font-semibold text-blue-300 stat-num">0.847</p>
           <p class="text-[11px] text-ink2 mt-1">Held-out AUC</p>
         </div>
       </div>
@@ -728,28 +663,28 @@
       <p class="text-ink2 leading-relaxed">Around 17% of this e-commerce company's 5,630 customers were churning — well above typical benchmarks — with a retention budget too small to cover everyone. Scoring every customer on churn risk <em>and</em> value identified 157 "Honeymoon Exit" customers to prioritise: first-month, high-order customers who had already complained, churning at 66%. They held roughly <strong class="text-ink">₹8 lakh</strong> in near-term order value — protectable through a <strong class="text-ink">₹1.1 lakh</strong> campaign built on complaint resolution, an early-loyalty programme and mobile-first outreach. The model was validated on held-out data (AUC 0.847).</p>
 
       <div class="mt-6 grid sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl border border-ink/10 bg-white p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Counter-intuitive finding #1</p>
+        <div class="rounded-2xl border border-ink/10 bg-white/5 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">Counter-intuitive finding #1</p>
           <p class="text-sm text-ink2 leading-relaxed">Churn is an <strong class="text-ink">onboarding</strong> problem, not a loyalty one — each extra month of tenure cuts churn odds ~18%, and a missing tenure value alone roughly <em>quadruples</em> churn odds.</p>
         </div>
-        <div class="rounded-2xl border border-ink/10 bg-white p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Counter-intuitive finding #2</p>
+        <div class="rounded-2xl border border-ink/10 bg-white/5 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">Counter-intuitive finding #2</p>
           <p class="text-sm text-ink2 leading-relaxed">Satisfaction score predicts churn <strong class="text-ink">in reverse</strong> — high scorers leave more, suggesting it's a one-time rating, not a loyalty measure.</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">Read through an STP lens</h4>
       <div class="grid sm:grid-cols-3 gap-4">
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Segmentation</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">Segmentation</p>
           <p class="text-sm text-ink2 leading-relaxed">Every customer scored on two axes — churn probability from the model, and value via order activity — splitting the base into risk/value quadrants.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Targeting</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">Targeting</p>
           <p class="text-sm text-ink2 leading-relaxed">The 157 "Honeymoon Exits" — high risk <em>and</em> high value — chosen over larger, cheaper-to-reach segments that weren't worth saving.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Positioning</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">Positioning</p>
           <p class="text-sm text-ink2 leading-relaxed">Service recovery and status, not discounts — coupons don't move this segment's churn, so the offer is trust and belonging instead.</p>
         </div>
       </div>
@@ -764,26 +699,26 @@
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">The marketing plan — Retain → Loyalty → Expand</h4>
       <div class="grid sm:grid-cols-3 gap-4">
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">01 · Retain</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">01 · Retain</p>
           <p class="text-sm text-ink2 leading-relaxed">Tiered complaint resolution — personal calls for the top 50 value-at-risk complainers within 48hrs; a WhatsApp resolution flow for the rest. Gestures (service visit, warranty, delivery credit) over discounts.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">02 · Loyalty</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">02 · Loyalty</p>
           <p class="text-sm text-ink2 leading-relaxed">"Insider" membership pilot — wallet points, early access, contributor status — gamified around community, not discounts. Points expire in 60 days, framed as a gentle nudge.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">03 · Expand</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-300 mb-2">03 · Expand</p>
           <p class="text-sm text-ink2 leading-relaxed">Personalised cross-sell on last purchase, delivered mobile-first (WhatsApp/push), capped at ~2 touches/week to protect a segment that has already complained once.</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">Budget &amp; validation</h4>
       <div class="grid sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl bg-blue-50 p-5">
+        <div class="rounded-2xl bg-blue-500/10 p-5">
           <p class="text-sm text-ink2 leading-relaxed">Bottom-up campaign budget of <strong class="text-ink">≈₹1.1 lakh</strong> (resolution calls, WhatsApp flows, service gestures, Insider pilot, cross-sell setup, contingency), breaking even at just <strong class="text-ink">11 of 157</strong> customers saved — well below the 78-customer target.</p>
         </div>
-        <div class="rounded-2xl bg-blue-50 p-5">
+        <div class="rounded-2xl bg-blue-500/10 p-5">
           <p class="text-sm text-ink2 leading-relaxed">A held-out <strong class="text-ink">20-customer control group</strong> tracks segment churn vs. control, complaint-resolution time, Insider enrolment and repeat-purchase rate — so impact is measurable, not assumed.</p>
         </div>
       </div>
@@ -818,25 +753,25 @@
     </div>
     <div class="p-8 md:p-10">
       <div class="grid sm:grid-cols-3 gap-4 mb-8">
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700">Sankalan</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400">Sankalan</p>
           <p class="text-xs text-ink2 mt-1">Annual business colloquium led</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700">Speaker Series</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400">Speaker Series</p>
           <p class="text-xs text-ink2 mt-1">Industry leaders curated &amp; hosted</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700">Social Reach</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400">Social Reach</p>
           <p class="text-xs text-ink2 mt-1">Led on MDI's institutional handles</p>
         </div>
       </div>
 
       <h4 class="font-serif text-lg font-semibold mb-4">What I owned</h4>
       <ul class="space-y-4 text-ink2 leading-relaxed">
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Organised Sankalan, MDI's annual business colloquium, owning speaker engagement, event communication, and helping with on-ground execution — a full-day programme of industry panel discussions and leader interactions with students, followed by a cultural night for students and alumni.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Curated the corporate speaker series where we identified industry leaders, handled outreach and confirmation, and managed session execution and promotion.</li>
-        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Led social media for the programme, increasing awareness by placing content on MDI's main institutional handles alongside the programme page.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Organised Sankalan, MDI's annual business colloquium, owning speaker engagement, event communication, and helping with on-ground execution — a full-day programme of industry panel discussions and leader interactions with students, followed by a cultural night for students and alumni.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Curated the corporate speaker series where we identified industry leaders, handled outreach and confirmation, and managed session execution and promotion.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500/100 shrink-0"></span>Led social media for the programme, increasing awareness by placing content on MDI's main institutional handles alongside the programme page.</li>
       </ul>
 
       <div class="mt-6 flex flex-wrap gap-2">
@@ -868,20 +803,20 @@
 
     <div class="p-8 md:p-10">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-        <div class="rounded-2xl bg-pink-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-pink-700 stat-num">$670M</p>
+        <div class="rounded-2xl bg-pink-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-pink-400 stat-num">$670M</p>
           <p class="text-[11px] text-ink2 mt-1">H1 2025 revenue</p>
         </div>
-        <div class="rounded-2xl bg-pink-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-pink-700 stat-num">7.3x</p>
+        <div class="rounded-2xl bg-pink-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-pink-400 stat-num">7.3x</p>
           <p class="text-[11px] text-ink2 mt-1">YoY growth</p>
         </div>
-        <div class="rounded-2xl bg-pink-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-pink-700 stat-num">188%</p>
+        <div class="rounded-2xl bg-pink-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-pink-400 stat-num">188%</p>
           <p class="text-[11px] text-ink2 mt-1">Net income jump</p>
         </div>
-        <div class="rounded-2xl bg-pink-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-pink-700 stat-num">30M+</p>
+        <div class="rounded-2xl bg-pink-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-pink-400 stat-num">30M+</p>
           <p class="text-[11px] text-ink2 mt-1">Global users</p>
         </div>
       </div>
@@ -896,16 +831,16 @@
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">STP snapshot</h4>
       <div class="grid sm:grid-cols-3 gap-4">
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-pink-700 mb-2">Segmentation</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">Segmentation</p>
           <p class="text-sm text-ink2 leading-relaxed">Age 18–29, 75% female. Identity-seekers and collectors, FOMO-responsive, urban &amp; globally mobile.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-pink-700 mb-2">Targeting</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">Targeting</p>
           <p class="text-sm text-ink2 leading-relaxed">Primary: Gen Z &amp; Millennial "kidults" in Asia &amp; the West. Secondary: fashion-forward influencers. Channel: social-first discovery → DTC.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-pink-700 mb-2">Positioning</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-2">Positioning</p>
           <p class="text-sm text-ink2 leading-relaxed">"The only designer toy that fuses art, scarcity and social currency into one ugly-cute cultural icon you wear as much as display."</p>
         </div>
       </div>
@@ -924,11 +859,11 @@
       </div>
 
       <div class="mt-10 grid sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
           <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-2">Brand risk to watch</p>
           <p class="text-sm text-ink2 leading-relaxed">Single-IP dependency — Pop Mart's revenue leans heavily on Labubu, much like Molly before it. Trend fatigue and counterfeit proliferation are the next threats to manage.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
           <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-2">Future strategy idea</p>
           <p class="text-sm text-ink2 leading-relaxed">An official secondary market (StockX/Christie's partnership) and a collector membership tier — converting trend buyers into long-term loyalists.</p>
         </div>
@@ -959,20 +894,20 @@
     <div class="p-8 md:p-10">
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700 stat-num">€260.84</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400 stat-num">€260.84</p>
           <p class="text-[11px] text-ink2 mt-1">#1 Share price, R8</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700 stat-num">€199,893k</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400 stat-num">€199,893k</p>
           <p class="text-[11px] text-ink2 mt-1">Highest op. profit, R8</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700 stat-num">€1.75M</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400 stat-num">€1.75M</p>
           <p class="text-[11px] text-ink2 mt-1">Cumulative earnings</p>
         </div>
-        <div class="rounded-2xl bg-amber-50 p-4 text-center">
-          <p class="font-serif text-xl font-semibold text-amber-700 stat-num">+336%</p>
+        <div class="rounded-2xl bg-amber-500/10 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-400 stat-num">+336%</p>
           <p class="text-[11px] text-ink2 mt-1">Op. profit growth R7→R8</p>
         </div>
       </div>
@@ -981,7 +916,7 @@
       <p class="text-ink2 leading-relaxed text-sm">Across 8 simulated rounds, Team Phoenix launched and managed smartphones across Europe &amp; Asia, competing on pricing, portfolio, ESG and advertising against 5 rival teams — targeting 6 consumer segments from Late Adopters to Tech Savvy, with shareholder value as the ultimate KPI.</p>
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">Share price trajectory, R1 → R6</h4>
-      <div class="rounded-2xl border border-ink/10 bg-white p-5">
+      <div class="rounded-2xl border border-ink/10 bg-white/5 p-5">
         <svg viewBox="0 0 640 220" class="w-full h-auto" role="img" aria-label="Line chart of Team Phoenix share price rising from 2.38 euros in round 1 to a peak of 458.12 euros in round 6">
           <line x1="40" y1="10" x2="40" y2="190" stroke="#E4B368" stroke-width="1"/>
           <line x1="40" y1="190" x2="620" y2="190" stroke="#E4B368" stroke-width="1"/>
@@ -1009,7 +944,7 @@
       </div>
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">The pivot that won it</h4>
-      <div class="rounded-2xl bg-amber-50 p-5 text-sm text-ink2 leading-relaxed">
+      <div class="rounded-2xl bg-amber-500/10 p-5 text-sm text-ink2 leading-relaxed">
         <strong class="text-ink">Round 4:</strong> while all 5 rivals fought over the Trendy + Enthusiast segments in Europe (~1,517k units combined), market research showed Price Conscious Asia + Socially Conscious demand of 20,000k+ units sitting almost untouched. Phoenix launched <strong class="text-ink">Zenith Air</strong> — a budget-friendly, first-mover product for that gap — tripled Asia channel investment, and rode the share price from €96.59 to €274.80, taking #1 in the Universe.
       </div>
 
@@ -1023,17 +958,17 @@
 
       <h4 class="font-serif text-lg font-semibold mt-10 mb-4">Reflection</h4>
       <div class="grid sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-emerald-700 mb-2">Best call</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-emerald-400 mb-2">Best call</p>
           <p class="text-sm text-ink2 leading-relaxed">Reading the market data to spot the Price Conscious + Socially Conscious gap in Round 4 — our single biggest source of alpha, and a first-mover advantage rivals only copied a round later.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-ink/10 p-5">
-          <p class="text-xs font-semibold tracking-widest uppercase text-rose-700 mb-2">Worst call</p>
+        <div class="rounded-2xl bg-white/5 border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-rose-400 mb-2">Worst call</p>
           <p class="text-sm text-ink2 leading-relaxed">Launching Zenith Neo at a €22/unit margin in R7 — 1,006k units of volume that actively destroyed blended profitability. Should have modelled RoS impact before launch.</p>
         </div>
       </div>
-      <div class="mt-4 rounded-2xl bg-ink text-paper p-5 text-sm leading-relaxed">
-        <strong class="text-amber-300">Key principle:</strong> profitability and share price move together — volume without margin is destruction, and timing of market entry matters as much as the entry itself.
+      <div class="mt-4 rounded-2xl bg-pink-500/100/10 border border-pink-500/25 p-5 text-sm leading-relaxed text-ink2">
+        <strong class="text-pink-400">Key principle:</strong> profitability and share price move together — volume without margin is destruction, and timing of market entry matters as much as the entry itself.
       </div>
 
       <div class="mt-8 flex flex-wrap gap-2">
