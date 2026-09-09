@@ -97,6 +97,16 @@
   .bento-tile:hover::before { opacity: 1; }
 
   .browser-bar span { width: 7px; height: 7px; border-radius: 999px; display: inline-block; }
+
+  .skill-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid rgba(27,24,21,0.08);
+    border-radius: 999px; padding: 8px 16px 8px 8px;
+    font-size: 13px; font-weight: 600; color: #1B1815;
+    box-shadow: 0 8px 18px -12px rgba(27,24,21,0.25);
+    white-space: nowrap;
+  }
+  .skill-dot { width: 22px; height: 22px; border-radius: 999px; flex-shrink: 0; }
 </style>
 </head>
 <body class="font-sans text-ink antialiased">
@@ -111,9 +121,6 @@
       <a href="#skills" class="underline-grow">Skills</a>
       <a href="#contact" class="underline-grow">Contact</a>
     </nav>
-    <a href="#contact" class="hidden md:inline-flex items-center gap-2 rounded-full bg-ink text-paper text-sm font-semibold px-5 py-2.5 hover:bg-teal-700 transition-colors">
-      Let's talk
-    </a>
     <button id="menuBtn" aria-label="Open menu" class="md:hidden p-2 -mr-2">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1B1815" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
@@ -134,21 +141,14 @@
   <div class="max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-14 md:pb-20 relative">
     <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-8 items-center">
       <div class="reveal">
-        <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-teal-600 bg-teal-50 px-3 py-1.5 rounded-full mb-5">
-          <span class="chip-dot bg-teal-500"></span> Open to full-time roles · Dec 2026
-        </p>
-        <h1 class="font-serif leading-[0.95] font-semibold text-ink text-[3.4rem] sm:text-7xl md:text-8xl">
-          Hi, I'm<br/><span class="italic">Tanya.</span>
+        <h1 class="font-serif leading-[1.03] font-semibold text-ink text-4xl sm:text-6xl md:text-[4.2rem]">
+          I make brands <span class="italic">matter.</span>
         </h1>
-        <p class="mt-4 text-2xl sm:text-3xl font-serif font-medium text-ink2">Brand &amp; Content Marketer.</p>
-        <p class="mt-5 text-lg text-ink2 max-w-md leading-snug">6+ years turning brand strategy into campaigns people actually engage with.</p>
+        <p class="mt-5 text-xl sm:text-2xl text-ink2 max-w-lg leading-snug">Not just louder. Smarter, sharper, and worth choosing.</p>
 
-        <div class="mt-7 flex flex-wrap gap-2">
-          <span class="tag-pill bg-white text-xs font-semibold px-3 py-1.5 rounded-full text-ink2">🎯 Brand Strategy</span>
-          <span class="tag-pill bg-white text-xs font-semibold px-3 py-1.5 rounded-full text-ink2">🔎 SEO &amp; Growth</span>
-          <span class="tag-pill bg-white text-xs font-semibold px-3 py-1.5 rounded-full text-ink2">✍️ Content Strategy</span>
-          <span class="tag-pill bg-white text-xs font-semibold px-3 py-1.5 rounded-full text-ink2">🚀 GTM</span>
-          <span class="tag-pill bg-white text-xs font-semibold px-3 py-1.5 rounded-full text-ink2">📊 Analytics</span>
+        <div class="mt-9 pt-6 border-t border-ink/10 max-w-xs">
+          <p class="font-serif text-2xl font-semibold text-ink">Tanya Gupta</p>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-teal-600 mt-1">Brand • Strategy • Ideas</p>
         </div>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -166,207 +166,295 @@
       <div class="relative reveal">
         <div class="relative mx-auto max-w-sm">
           <img src="assets/profile/tanya-profile.jpg" alt="Portrait of Tanya Gupta" class="blob-mask blob-animate relative w-full object-cover shadow-2xl aspect-[4/5]" />
-          <div class="floaty absolute -left-6 top-6 bg-white rounded-2xl shadow-xl px-4 py-3 border border-ink/5 hidden sm:block">
-            <p class="text-[11px] uppercase tracking-wide text-ink2 font-semibold">Currently</p>
-            <p class="text-sm font-semibold text-ink">PGDM-BM, MDI Gurgaon</p>
-          </div>
-          <div class="floaty-slow absolute -right-4 -bottom-4 bg-ink text-paper rounded-2xl shadow-xl px-4 py-3 hidden sm:block">
-            <p class="text-[11px] uppercase tracking-wide text-amber-300 font-semibold">2.5x</p>
-            <p class="text-sm font-semibold">Engagement growth, Amazon</p>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SELECTED WORK — BENTO ============ -->
+<!-- ============ SECTION 2: BIG VISUAL GALLERY ============ -->
 <section id="work" class="bg-white border-y border-ink/10">
   <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
-    <div class="reveal flex flex-wrap items-end justify-between gap-4 mb-10">
-      <div>
-        <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Selected Work</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-semibold max-w-xl leading-[1.05]">Campaigns, not just a résumé.</h2>
-      </div>
-      <p class="text-ink2 text-sm max-w-xs">Tap any tile for the full story — role, results and visuals.</p>
+    <div class="reveal mb-10">
+      <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Selected Campaigns</p>
+      <h2 class="font-serif text-4xl md:text-5xl font-semibold max-w-2xl leading-[1.05]">Work that made it out into the world.</h2>
     </div>
 
-    <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4 md:auto-rows-[170px] md:grid-flow-dense">
-
-      <!-- Amazon — big feature tile -->
-      <button data-open="modal-amazon" class="bento-tile group col-span-2 row-span-2 md:col-span-2 md:row-span-2 rounded-3xl bg-gradient-to-br from-[#232F3E] via-[#182531] to-[#0F1720] text-left p-6 md:p-8 flex flex-col justify-between min-h-[260px]">
-        <div class="relative flex items-center justify-between">
-          <span class="text-amber-300 text-xs font-semibold tracking-widest uppercase">Amazon · Jul'23–Jun'25</span>
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-amber-300/80"><path d="M4 15.5c3.5 3 12.5 3 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="9" r="1.4" fill="currentColor"/><circle cx="12" cy="7" r="1.4" fill="currentColor"/><circle cx="17" cy="9.4" r="1.4" fill="currentColor"/><path d="M7 9v3.2M12 7v5M17 9.4v2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </div>
-        <div class="relative">
-          <p class="font-serif text-6xl md:text-7xl font-semibold text-white leading-none">2.5X</p>
-          <p class="mt-3 text-white/70 text-sm md:text-base max-w-xs">Engagement growth from an organic-first distribution shift</p>
-          <p class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-300">SEO &amp; Distribution Manager
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </p>
-        </div>
+    <div class="reveal columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:balance]">
+      <button data-lightbox="assets/gallery/amazon-smb-khadi.jpg" data-caption="Amazon · SMB Storytelling — Khadi sarees go pan-India" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/amazon-smb-khadi.jpg" alt="Amazon news feature: Khadi sarees go pan-India, an SMB storytelling campaign" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">Amazon · SMB Storytelling — Khadi Sarees</p>
       </button>
 
-      <!-- Labubu — wide image tile -->
-      <button data-open="modal-labubu" class="bento-tile group col-span-2 md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative min-h-[200px] bg-gradient-to-br from-[#701A46] to-[#2E0A26]">
-        <img src="assets/labubu/labubu-brown.png" alt="Labubu collectible figure" class="absolute right-1 -bottom-8 h-[145%] drop-shadow-2xl" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
-        <div class="relative h-full flex flex-col justify-end p-6 pr-28">
-          <span class="text-pink-300 text-xs font-semibold tracking-widest uppercase">Case Study</span>
-          <p class="font-serif text-2xl md:text-3xl font-semibold text-white mt-1 leading-tight">Labubu × Pop Mart</p>
-          <p class="text-white/70 text-sm mt-1">Decoding a $1.95B playbook</p>
-        </div>
+      <button data-lightbox="assets/gallery/cbre-cxo-column.jpg" data-caption="CBRE · CXO Positioning — BW Businessworld column" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/cbre-cxo-column.jpg" alt="BW Businessworld magazine column bylined by CBRE's Anshuman Magazine on real estate demand" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">CBRE · CXO Positioning</p>
       </button>
 
-      <!-- CBRE -->
-      <button data-open="modal-cbre" class="bento-tile group col-span-1 md:col-span-1 md:row-span-1 rounded-3xl bg-gradient-to-br from-[#0C3B2E] to-[#123329] text-left p-5 flex flex-col justify-between min-h-[170px]">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-emerald-300/90"><path d="M4 21V9l8-5 8 5v12" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <div>
-          <p class="font-serif text-3xl font-semibold text-white leading-none">+50%</p>
-          <p class="mt-2 text-emerald-200/80 text-xs">CBRE · LinkedIn followers</p>
-        </div>
+      <button data-lightbox="assets/gallery/amazon-karigar.jpg" data-caption="Amazon Karigar Program — handcrafted seller storytelling" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/amazon-karigar.jpg" alt="Amazon Karigar program graphic featuring handcrafted seller products" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">Amazon Karigar Program</p>
       </button>
 
-      <!-- Churn -->
-      <button data-open="modal-churn" class="bento-tile group col-span-1 md:col-span-1 md:row-span-1 rounded-3xl bg-gradient-to-br from-[#0F2A4A] to-[#0B1B30] text-left p-5 flex flex-col justify-between min-h-[170px]">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-blue-300/90"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div>
-          <p class="font-serif text-3xl font-semibold text-white leading-none">0.847</p>
-          <p class="mt-2 text-blue-200/80 text-xs">Churn model · AUC score</p>
-        </div>
+      <button data-lightbox="assets/gallery/cbre-cii-council.jpg" data-caption="CBRE · CII Event Feature — Northern Regional Council meeting" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/cbre-cii-council.jpg" alt="CII Northern Regional Council meeting panel featuring CBRE's Anshuman Magazine" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">CBRE · CII Event Feature</p>
       </button>
 
-      <!-- Tech9logy -->
-      <button data-open="modal-tech9" class="bento-tile group col-span-1 md:col-span-1 md:row-span-1 rounded-3xl bg-gradient-to-br from-[#3B1E77] to-[#1E1147] text-left p-5 flex flex-col justify-between min-h-[170px]">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-violet-300/90"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-        <div>
-          <p class="font-serif text-2xl font-semibold text-white leading-tight">Year-1<br/>Award</p>
-          <p class="mt-2 text-violet-200/80 text-xs">Tech9logy · B2B campaigns</p>
-        </div>
+      <button data-lightbox="assets/gallery/amazon-launchpad.jpg" data-caption="Amazon Launchpad Program — MSME growth feature" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/amazon-launchpad.jpg" alt="Amazon News India feature on MSMEs scaling with Amazon Launchpad" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">Amazon Launchpad Program</p>
       </button>
 
-      <!-- Cesim — tall tile -->
-      <button data-open="modal-cesim" class="bento-tile group col-span-1 row-span-2 md:col-span-1 md:row-span-2 rounded-3xl bg-gradient-to-br from-[#8A5A12] via-[#6B4410] to-[#3A2506] text-left p-5 flex flex-col justify-between min-h-[260px]">
-        <div>
-          <span class="text-amber-200 text-[11px] font-semibold tracking-widest uppercase">Cesim · Universe 2</span>
-          <p class="font-serif text-5xl font-semibold text-white leading-none mt-3">#1</p>
-          <p class="mt-2 text-amber-100/80 text-xs">Share price, Round 8</p>
-        </div>
-        <svg viewBox="0 0 120 40" class="w-full h-10 opacity-90">
-          <polyline fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="4,36 26,33 48,26 70,12 92,4 116,20" />
-        </svg>
+      <button data-lightbox="assets/gallery/cbre-social-campaign.jpg" data-caption="CBRE Social Media Campaign — client testimonial creative" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/cbre-social-campaign.jpg" alt="CBRE Client Speak social media testimonial graphic" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">CBRE Social Media Campaign</p>
       </button>
 
-      <!-- Vamani -->
-      <button data-open="modal-vamani" class="bento-tile group col-span-1 md:col-span-1 md:row-span-1 rounded-3xl bg-gradient-to-br from-[#7A1E2B] to-[#3D0F16] text-left p-5 flex flex-col justify-between min-h-[170px]">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-rose-300/90"><path d="M12 3c2.5 2.8 3.8 5.9 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.9-3.8-9s1.3-6.2 3.8-9Z" stroke="currentColor" stroke-width="1.5"/></svg>
-        <div>
-          <p class="font-serif text-xl font-semibold text-white leading-tight">Cross-border<br/>eCommerce</p>
-          <p class="mt-2 text-rose-200/80 text-xs">Vamani Overseas · AU client</p>
-        </div>
+      <button data-lightbox="assets/gallery/cosmo-foundation.jpg" data-caption="Cosmo Foundation — CSR campaign (Tech9logy client work)" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/cosmo-foundation.jpg" alt="Cosmo Foundation website showing CSR impact stats" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">Cosmo Foundation · CSR Campaign</p>
+      </button>
+
+      <button data-lightbox="assets/gallery/amazon-smb-growth.jpg" data-caption="Amazon SMB Growth Campaign — festive sales impact" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/amazon-smb-growth.jpg" alt="Amazon SMB growth infographic showing sales spikes across Launchpad, Karigar and Saheli sellers" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">Amazon · SMB Growth Campaign</p>
+      </button>
+
+      <button data-lightbox="assets/gallery/cbre-conference.jpg" data-caption="CBRE · Industry Conference — Knowledge Partner feature" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/cbre-conference.jpg" alt="CII Conference on Project Management with CBRE as Knowledge Partner" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">CBRE · Industry Conference</p>
+      </button>
+
+      <button data-lightbox="assets/gallery/amazon-prime-day-seo.jpg" data-caption="Amazon Prime Day — organic search visibility win" class="gallery-item block w-full mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-ink/10 text-left group">
+        <img src="assets/gallery/amazon-prime-day-seo.jpg" alt="Google search results showing organic ranking for Amazon Prime Day content" class="w-full group-hover:scale-[1.03] transition-transform duration-500" />
+        <p class="p-3 text-xs font-semibold text-ink2">Amazon Prime Day · SEO Win</p>
       </button>
     </div>
   </div>
 </section>
 
-<!-- ============ APPROACH ============ -->
-<section class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-20">
-  <div class="reveal grid sm:grid-cols-3 gap-6">
-    <div class="rounded-3xl border border-ink/10 p-7">
-      <p class="font-serif text-4xl text-amber-500 mb-3">01</p>
-      <p class="font-semibold text-lg">Research</p>
-      <p class="text-ink2 text-sm mt-1.5">Consumer insight, competitive reads, data — before the brief.</p>
-    </div>
-    <div class="rounded-3xl border border-ink/10 p-7">
-      <p class="font-serif text-4xl text-amber-500 mb-3">02</p>
-      <p class="font-semibold text-lg">Position</p>
-      <p class="text-ink2 text-sm mt-1.5">Sharp messaging, brand voice, a story worth telling.</p>
-    </div>
-    <div class="rounded-3xl border border-ink/10 p-7">
-      <p class="font-serif text-4xl text-amber-500 mb-3">03</p>
-      <p class="font-semibold text-lg">Distribute</p>
-      <p class="text-ink2 text-sm mt-1.5">SEO, channels, automation — so the work actually gets seen.</p>
-    </div>
-  </div>
-</section>
+<!-- ============ SECTION 3: ABOUT + EXPERIENCE + PROJECTS ============ -->
+<section class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
 
-<!-- ============ SKILLS ============ -->
-<section id="skills" class="bg-ink text-paper">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
-    <div class="grid md:grid-cols-[0.9fr_1.1fr] gap-12">
-      <div class="reveal">
-        <p class="text-xs font-semibold tracking-widest uppercase text-amber-300 mb-3">Core Skills</p>
-        <h2 class="font-serif text-3xl md:text-4xl font-semibold">The toolkit behind the work.</h2>
-      </div>
-      <div class="reveal flex flex-wrap gap-3">
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Brand Strategy, Positioning &amp; Messaging</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Go-to-Market (GTM) Strategy</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Integrated Campaign Management</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Experiential Activations &amp; Events</span>
-        <span class="px-4 py-2 rounded-full bg-amber-400 text-ink text-sm font-semibold">SEO &amp; Organic Growth</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Copywriting &amp; Editorial Planning</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Social Media Strategy</span>
-        <span class="px-4 py-2 rounded-full bg-amber-400 text-ink text-sm font-semibold">A/B Testing</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Consumer Insights &amp; Segmentation</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Agency &amp; Vendor Management</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Email Automation (Salesforce Pardot)</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">CRM &amp; Lifecycle Marketing</span>
-        <span class="px-4 py-2 rounded-full bg-amber-400 text-ink text-sm font-semibold">Web Analytics (GA, Parse.ly)</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Marketing Budget &amp; ROI Planning</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">Stakeholder Management</span>
-        <span class="px-4 py-2 rounded-full bg-teal-500/90 text-sm font-semibold">Power BI</span>
-        <span class="px-4 py-2 rounded-full bg-teal-500/90 text-sm font-semibold">Python (churn modelling, scoring)</span>
-        <span class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium">AI Tools</span>
-      </div>
-    </div>
+  <!-- About -->
+  <div class="reveal grid md:grid-cols-[0.85fr_1.15fr] gap-10 md:gap-14 items-start mb-20">
+    <img src="assets/about/tanya-about.jpg" alt="Tanya Gupta outdoors" class="rounded-3xl w-full max-w-sm mx-auto md:mx-0 grayscale contrast-[1.05]" />
+    <div>
+      <h2 class="font-serif text-3xl md:text-4xl font-semibold leading-tight">A career in figuring things out</h2>
+      <p class="mt-5 text-ink2 leading-relaxed">What started with content has grown into a broader curiosity about brands, people and what makes businesses move. Across e-commerce, commercial real estate and digital, I've worked on campaigns, launches and brand initiatives while learning to look beyond the brief, question what's working and find a better way forward.</p>
 
-    <!-- Education -->
-    <div class="mt-16 pt-12 border-t border-white/10 grid sm:grid-cols-3 gap-8 reveal">
-      <div>
-        <p class="text-xs font-semibold tracking-widest uppercase text-amber-300 mb-2">2025 – 2027</p>
-        <p class="font-serif text-lg font-semibold">PGDM-BM</p>
-        <p class="text-paper/70 text-sm mt-1">MDI Gurgaon · Brand Management &amp; Marketing Strategy</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-widest uppercase text-amber-300 mb-2">2022</p>
-        <p class="font-serif text-lg font-semibold">Digital Marketing Certification</p>
-        <p class="text-paper/70 text-sm mt-1">MICA</p>
-      </div>
-      <div>
-        <p class="text-xs font-semibold tracking-widest uppercase text-amber-300 mb-2">2018</p>
-        <p class="font-serif text-lg font-semibold">BA (Hons) English</p>
-        <p class="text-paper/70 text-sm mt-1">PGDAV College, Delhi University</p>
+      <div class="mt-8 border-t border-ink/10">
+        <div class="flex items-center justify-between py-3.5 border-b border-ink/10">
+          <span class="font-semibold text-sm">SEO &amp; Distribution Manager</span>
+          <span class="text-ink2 text-sm hidden sm:block">Amazon</span>
+          <span class="text-ink2 text-xs">2023 → 2025</span>
+        </div>
+        <div class="flex items-center justify-between py-3.5 border-b border-ink/10">
+          <span class="font-semibold text-sm">Associate Content Writer</span>
+          <span class="text-ink2 text-sm hidden sm:block">CBRE</span>
+          <span class="text-ink2 text-xs">2022 → 2023</span>
+        </div>
+        <div class="flex items-center justify-between py-3.5 border-b border-ink/10">
+          <span class="font-semibold text-sm">Executive Content Writer</span>
+          <span class="text-ink2 text-sm hidden sm:block">Tech9logy Creators</span>
+          <span class="text-ink2 text-xs">2020 → 2021</span>
+        </div>
+        <div class="flex items-center justify-between py-3.5">
+          <span class="font-semibold text-sm">Intern Content Writer</span>
+          <span class="text-ink2 text-sm hidden sm:block">Vamani Overseas</span>
+          <span class="text-ink2 text-xs">2018 → 2020</span>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Work Experience cards -->
+  <div class="reveal mb-8">
+    <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Work Experience</p>
+    <h3 class="font-serif text-2xl md:text-3xl font-semibold">Tap a role for the full case study.</h3>
+  </div>
+  <div class="reveal grid sm:grid-cols-2 gap-5 mb-20">
+    <button data-open="modal-amazon" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#232F3E] to-[#0F1720] flex items-center justify-between px-6">
+        <div>
+          <p class="text-amber-300 text-xs font-semibold tracking-widest uppercase">Amazon</p>
+          <p class="text-white font-semibold mt-1">SEO &amp; Distribution Manager</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-amber-300/80 shrink-0"><path d="M4 15.5c3.5 3 12.5 3 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="9" r="1.4" fill="currentColor"/><circle cx="12" cy="7" r="1.4" fill="currentColor"/><circle cx="17" cy="9.4" r="1.4" fill="currentColor"/><path d="M7 9v3.2M12 7v5M17 9.4v2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">2.5x engagement growth, organic-first shift</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+
+    <button data-open="modal-cbre" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#0C3B2E] to-[#123329] flex items-center justify-between px-6">
+        <div>
+          <p class="text-emerald-300 text-xs font-semibold tracking-widest uppercase">CBRE</p>
+          <p class="text-white font-semibold mt-1">Associate Content Writer</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-emerald-300/80 shrink-0"><path d="M4 21V9l8-5 8 5v12" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">Grew CEO's LinkedIn voice, followers +50%</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+
+    <button data-open="modal-tech9" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#3B1E77] to-[#1E1147] flex items-center justify-between px-6">
+        <div>
+          <p class="text-violet-300 text-xs font-semibold tracking-widest uppercase">Tech9logy Creators</p>
+          <p class="text-white font-semibold mt-1">Executive Content Writer</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-violet-300/80 shrink-0"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">B2B campaigns, awarded within year one</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+
+    <button data-open="modal-vamani" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#7A1E2B] to-[#3D0F16] flex items-center justify-between px-6">
+        <div>
+          <p class="text-rose-300 text-xs font-semibold tracking-widest uppercase">Vamani Overseas</p>
+          <p class="text-white font-semibold mt-1">Intern Content Writer</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-rose-300/80 shrink-0"><path d="M12 3c2.5 2.8 3.8 5.9 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.9-3.8-9s1.3-6.2 3.8-9Z" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">Cross-border eCommerce content, AU client</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+  </div>
+
+  <!-- Academic / Live Projects -->
+  <div class="reveal mb-8">
+    <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 mb-3">Academic &amp; Live Projects</p>
+    <h3 class="font-serif text-2xl md:text-3xl font-semibold">Tap a project for the full breakdown.</h3>
+  </div>
+  <div class="reveal grid sm:grid-cols-2 gap-5">
+    <button data-open="modal-churn" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#0F2A4A] to-[#0B1B30] flex items-center justify-between px-6">
+        <div>
+          <p class="text-blue-300 text-xs font-semibold tracking-widest uppercase">Self-initiated</p>
+          <p class="text-white font-semibold mt-1">Churn Model &amp; STP</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-blue-300/80 shrink-0"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">Scored 5,630 customers, AUC 0.847</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+
+    <button data-open="modal-corpcomms" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#5B3A0E] to-[#2E1D08] flex items-center justify-between px-6">
+        <div>
+          <p class="text-amber-300 text-xs font-semibold tracking-widest uppercase">MDI Gurgaon</p>
+          <p class="text-white font-semibold mt-1">Creative Head, Corp Comms</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-amber-300/80 shrink-0"><path d="M4 8.5V15a2 2 0 0 0 2 2h1l3 3v-3h6a2 2 0 0 0 2-2V8.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 8.5 12 4l8 4.5-8 4.5-8-4.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">Led Sankalan colloquium &amp; speaker series</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+
+    <button data-open="modal-cesim" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#8A5A12] to-[#3A2506] flex items-center justify-between px-6">
+        <div>
+          <p class="text-amber-200 text-xs font-semibold tracking-widest uppercase">MDI Gurgaon</p>
+          <p class="text-white font-semibold mt-1">Cesim Smartphone Simulation</p>
+        </div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-amber-200/80 shrink-0"><path d="M4 19V9l4-4h8l4 4v10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 19v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">#1 share price, Round 8, Universe 2</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+
+    <button data-open="modal-labubu" class="card-lift text-left rounded-3xl border border-ink/10 overflow-hidden group">
+      <div class="h-28 bg-gradient-to-br from-[#701A46] to-[#2E0A26] flex items-center justify-between px-6">
+        <div>
+          <p class="text-pink-300 text-xs font-semibold tracking-widest uppercase">Brand Case Study</p>
+          <p class="text-white font-semibold mt-1">PopMart (Labubu) Analysis</p>
+        </div>
+        <img src="assets/labubu/labubu-brown.png" alt="" class="h-16 shrink-0" />
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <span class="text-sm text-ink2">Decoding a $1.95B designer-toy empire</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </button>
+  </div>
 </section>
 
-<!-- ============ SIGNATURE MOMENT ============ -->
-<section class="max-w-6xl mx-auto px-5 md:px-8 pt-4 pb-8 text-center overflow-hidden">
-  <p class="reveal font-serif italic text-[16vw] sm:text-8xl md:text-9xl leading-none text-ink/90 select-none">Tanya Gupta</p>
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop">
+  <button id="lightboxClose" class="absolute right-5 top-5 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white shadow">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="#1B1815" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <figure class="max-w-3xl w-full">
+    <img id="lightboxImg" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-2xl bg-white" />
+    <figcaption id="lightboxCaption" class="text-center text-paper/90 text-sm mt-4"></figcaption>
+  </figure>
+</div>
+
+<!-- ============ SECTION 4: SKILLS WORD CLOUD ============ -->
+<section id="skills" class="bg-paper2 border-y border-ink/10 overflow-hidden">
+  <div class="max-w-5xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <p class="reveal text-center font-serif italic text-3xl text-ink2 mb-10">Hello!</p>
+
+    <div class="reveal flex flex-col md:flex-row items-center md:items-start justify-center gap-3 md:gap-8">
+      <!-- left pills -->
+      <div class="flex flex-row md:flex-col flex-wrap justify-center gap-3 md:pt-6">
+        <span class="skill-pill"><i class="skill-dot bg-[#F2622E]"></i>Brand Strategy</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#2AA7DE]"></i>Positioning &amp; Messaging</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#1B1815]"></i>Go-to-Market</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#E6B800]"></i>Consumer Insights</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#E0468B]"></i>Audience Segmentation</span>
+      </div>
+
+      <!-- center quote -->
+      <p class="font-serif text-2xl sm:text-3xl md:text-4xl text-center leading-snug max-w-md px-2">
+        Focusing on building brands with <span class="text-ink2">clear strategy, sharp positioning</span> and room to grow.
+      </p>
+
+      <!-- right pills -->
+      <div class="flex flex-row md:flex-col flex-wrap justify-center gap-3 md:pt-6">
+        <span class="skill-pill"><i class="skill-dot bg-[#E6B800]"></i>Integrated Campaigns</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#E0468B]"></i>Marketing ROI</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#3CA35A]"></i>Experiential Marketing</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#2AA7DE]"></i>A/B Testing</span>
+        <span class="skill-pill"><i class="skill-dot bg-[#3CA35A]"></i>Analytics</span>
+      </div>
+    </div>
+
+    <p class="reveal text-center text-ink2 text-sm mt-16">PGDM-BM, MDI Gurgaon (2025–27) · Digital Marketing Certification, MICA · BA (Hons) English, Delhi University</p>
+  </div>
 </section>
 
 <!-- ============ CONTACT / FOOTER ============ -->
-<footer id="contact" class="max-w-6xl mx-auto px-5 md:px-8 pb-16 md:pb-24">
-  <div class="reveal rounded-[2rem] bg-gradient-to-br from-amber-100 to-teal-50 border border-ink/10 p-10 md:p-16 text-center">
-    <p class="text-xs font-semibold tracking-widest uppercase text-teal-600 mb-3">Let's build something</p>
-    <h2 class="font-serif text-3xl md:text-4xl font-semibold max-w-2xl mx-auto">Open to full-time roles from December 2026.</h2>
-    <div class="mt-8 flex flex-wrap justify-center gap-4">
-      <a href="mailto:tanyag1019@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-ink text-paper font-semibold px-6 py-3 hover:bg-teal-700 transition-colors">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.2 8-6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        tanyag1019@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/tanya-gupta-ba734411a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 bg-white font-semibold px-6 py-3 hover:border-ink transition-colors">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H4.06V19h2.88V8.5ZM5.5 7.14A1.67 1.67 0 1 0 5.5 3.8a1.67 1.67 0 0 0 0 3.34ZM19.94 19h-2.87v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.85V19h-2.87V8.5h2.76v1.43h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V19Z" fill="currentColor"/></svg>
-        Connect on LinkedIn
-      </a>
-    </div>
+<footer id="contact" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
+  <p class="reveal text-xs font-semibold tracking-widest uppercase text-teal-600 mb-4">Get in touch</p>
+  <div class="reveal flex flex-wrap justify-center gap-4">
+    <a href="mailto:tanyag1019@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-ink text-paper font-semibold px-6 py-3 hover:bg-teal-700 transition-colors">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.2 8-6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      tanyag1019@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/tanya-gupta-ba734411a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 bg-white font-semibold px-6 py-3 hover:border-ink transition-colors">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H4.06V19h2.88V8.5ZM5.5 7.14A1.67 1.67 0 1 0 5.5 3.8a1.67 1.67 0 0 0 0 3.34ZM19.94 19h-2.87v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.85V19h-2.87V8.5h2.76v1.43h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V19Z" fill="currentColor"/></svg>
+      Connect on LinkedIn
+    </a>
   </div>
-  <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-ink2">
-    <p>© <span id="year"></span> Tanya Gupta.</p>
-    <p>PGDM-BM · MDI Gurgaon</p>
-  </div>
+  <p class="mt-10 text-sm text-ink2">© <span id="year"></span> Tanya Gupta.</p>
 </footer>
 
 <!-- ============================================================ -->
@@ -409,12 +497,23 @@
         <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Built marketing automation workflows in Salesforce Pardot — behaviour-triggered drip campaigns, audience segmentation and lifecycle reporting to improve retention and re-engagement.</li>
       </ul>
 
-      <div class="mt-8 rounded-2xl border border-ink/10 bg-white p-5">
-        <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-2">Campaign context</p>
-        <p class="text-sm text-ink2 leading-relaxed">Distribution and content work spanned small-business storytelling (e.g. artisan &amp; handloom seller journeys) and seasonal flagship moments like the Great Indian Festival — coordinated with CSR, merchandising and talent-management partners for reach beyond paid media.</p>
+      <p class="text-xs font-semibold tracking-widest uppercase text-ink2 mb-3">Campaign visuals</p>
+      <div class="grid grid-cols-2 gap-3 mb-8">
+        <button data-lightbox="assets/gallery/amazon-smb-khadi.jpg" data-caption="Amazon · SMB Storytelling — Khadi sarees go pan-India" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/amazon-smb-khadi.jpg" alt="Amazon SMB storytelling feature on Khadi sarees" class="w-full h-32 object-cover" />
+        </button>
+        <button data-lightbox="assets/gallery/amazon-karigar.jpg" data-caption="Amazon Karigar Program" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/amazon-karigar.jpg" alt="Amazon Karigar program graphic" class="w-full h-32 object-cover" />
+        </button>
+        <button data-lightbox="assets/gallery/amazon-launchpad.jpg" data-caption="Amazon Launchpad Program" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/amazon-launchpad.jpg" alt="Amazon Launchpad program feature" class="w-full h-32 object-cover" />
+        </button>
+        <button data-lightbox="assets/gallery/amazon-prime-day-seo.jpg" data-caption="Amazon Prime Day — organic search visibility win" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/amazon-prime-day-seo.jpg" alt="Organic search ranking for Amazon Prime Day content" class="w-full h-32 object-cover" />
+        </button>
       </div>
 
-      <div class="mt-6 flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2">
         <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">SEO</span>
         <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Organic Growth</span>
         <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Salesforce Pardot</span>
@@ -461,7 +560,23 @@
         <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-teal-500 shrink-0"></span>Promoted industry research reports through digital campaigns, supporting growth in downloads, organic traffic and leads; used performance data to shape what we published next.</li>
       </ul>
 
-      <div class="mt-6 flex flex-wrap gap-2">
+      <p class="mt-8 text-xs font-semibold tracking-widest uppercase text-ink2 mb-3">Campaign visuals</p>
+      <div class="grid grid-cols-2 gap-3 mb-8">
+        <button data-lightbox="assets/gallery/cbre-cxo-column.jpg" data-caption="CBRE · CXO Positioning — BW Businessworld column" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/cbre-cxo-column.jpg" alt="BW Businessworld column bylined by CBRE's CEO" class="w-full h-32 object-cover" />
+        </button>
+        <button data-lightbox="assets/gallery/cbre-cii-council.jpg" data-caption="CBRE · CII Event Feature" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/cbre-cii-council.jpg" alt="CII Northern Regional Council meeting featuring CBRE leadership" class="w-full h-32 object-cover" />
+        </button>
+        <button data-lightbox="assets/gallery/cbre-conference.jpg" data-caption="CBRE · Industry Conference" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/cbre-conference.jpg" alt="CII conference with CBRE as Knowledge Partner" class="w-full h-32 object-cover" />
+        </button>
+        <button data-lightbox="assets/gallery/cbre-social-campaign.jpg" data-caption="CBRE Social Media Campaign" class="rounded-xl overflow-hidden border border-ink/10">
+          <img src="assets/gallery/cbre-social-campaign.jpg" alt="CBRE Client Speak social media graphic" class="w-full h-32 object-cover" />
+        </button>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
         <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Executive Communications</span>
         <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">LinkedIn Strategy</span>
         <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Event Management</span>
@@ -583,7 +698,8 @@
     </button>
     <div class="noise-card h-52 md:h-60 bg-gradient-to-br from-[#0F2A4A] via-[#0C2038] to-[#0B1B30] flex flex-col justify-end p-8">
       <p class="text-blue-300 text-xs font-semibold tracking-widest uppercase">Self-initiated · Analytics to Strategy · 2026</p>
-      <h3 class="font-serif text-2xl md:text-4xl font-semibold text-white mt-1">E-Commerce Customer Retention &amp; Churn Modelling</h3>
+      <h3 class="font-serif text-2xl md:text-4xl font-semibold text-white mt-1">Churn Model &amp; STP</h3>
+      <p class="text-white/60 text-xs mt-1">E-Commerce Customer Retention &amp; Churn Modelling</p>
       <p class="text-white/70 text-sm mt-2 max-w-2xl">Python · Power BI · Excel — logistic regression, customer scoring, campaign design</p>
     </div>
     <div class="p-8 md:p-10">
@@ -619,6 +735,22 @@
         <div class="rounded-2xl border border-ink/10 bg-white p-5">
           <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Counter-intuitive finding #2</p>
           <p class="text-sm text-ink2 leading-relaxed">Satisfaction score predicts churn <strong class="text-ink">in reverse</strong> — high scorers leave more, suggesting it's a one-time rating, not a loyalty measure.</p>
+        </div>
+      </div>
+
+      <h4 class="font-serif text-lg font-semibold mt-10 mb-4">Read through an STP lens</h4>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-white border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Segmentation</p>
+          <p class="text-sm text-ink2 leading-relaxed">Every customer scored on two axes — churn probability from the model, and value via order activity — splitting the base into risk/value quadrants.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Targeting</p>
+          <p class="text-sm text-ink2 leading-relaxed">The 157 "Honeymoon Exits" — high risk <em>and</em> high value — chosen over larger, cheaper-to-reach segments that weren't worth saving.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-ink/10 p-5">
+          <p class="text-xs font-semibold tracking-widest uppercase text-blue-700 mb-2">Positioning</p>
+          <p class="text-sm text-ink2 leading-relaxed">Service recovery and status, not discounts — coupons don't move this segment's churn, so the offer is trust and belonging instead.</p>
         </div>
       </div>
 
@@ -674,6 +806,49 @@
   </div>
 </div>
 
+<!-- Creative Head, Corporate Communications Committee Modal -->
+<div data-modal="modal-corpcomms" class="fixed inset-0 z-50 items-center justify-center p-4 modal-backdrop">
+  <div class="modal-panel relative w-full max-w-3xl bg-paper rounded-3xl overflow-y-auto scrollbar-thin shadow-2xl">
+    <button data-close class="absolute right-5 top-5 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white shadow">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="#1B1815" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="noise-card h-52 bg-gradient-to-br from-[#5B3A0E] via-[#432B0A] to-[#2E1D08] flex flex-col justify-end p-8">
+      <p class="text-amber-300 text-xs font-semibold tracking-widest uppercase">2025 – 2026 · MDI Gurgaon</p>
+      <h3 class="font-serif text-2xl md:text-4xl font-semibold text-white mt-1">Creative Head, Corporate Communications Committee</h3>
+    </div>
+    <div class="p-8 md:p-10">
+      <div class="grid sm:grid-cols-3 gap-4 mb-8">
+        <div class="rounded-2xl bg-amber-50 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-700">Sankalan</p>
+          <p class="text-xs text-ink2 mt-1">Annual business colloquium led</p>
+        </div>
+        <div class="rounded-2xl bg-amber-50 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-700">Speaker Series</p>
+          <p class="text-xs text-ink2 mt-1">Industry leaders curated &amp; hosted</p>
+        </div>
+        <div class="rounded-2xl bg-amber-50 p-4 text-center">
+          <p class="font-serif text-xl font-semibold text-amber-700">Social Reach</p>
+          <p class="text-xs text-ink2 mt-1">Led on MDI's institutional handles</p>
+        </div>
+      </div>
+
+      <h4 class="font-serif text-lg font-semibold mb-4">What I owned</h4>
+      <ul class="space-y-4 text-ink2 leading-relaxed">
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Organised Sankalan, MDI's annual business colloquium, owning speaker engagement, event communication, and helping with on-ground execution — a full-day programme of industry panel discussions and leader interactions with students, followed by a cultural night for students and alumni.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Curated the corporate speaker series where we identified industry leaders, handled outreach and confirmation, and managed session execution and promotion.</li>
+        <li class="flex gap-3"><span class="mt-1.5 chip-dot bg-amber-500 shrink-0"></span>Led social media for the programme, increasing awareness by placing content on MDI's main institutional handles alongside the programme page.</li>
+      </ul>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Event Management</span>
+        <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Speaker Relations</span>
+        <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Social Media Leadership</span>
+        <span class="tag-pill text-xs font-medium px-3 py-1.5 rounded-full text-ink2">Program Promotion</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Labubu Modal -->
 <div data-modal="modal-labubu" class="fixed inset-0 z-50 items-center justify-center p-4 modal-backdrop">
   <div class="modal-panel relative w-full max-w-4xl bg-paper rounded-3xl overflow-y-auto scrollbar-thin shadow-2xl">
@@ -686,7 +861,7 @@
       <img src="assets/labubu/labubu-brown.png" alt="Labubu figure" class="absolute right-2 -bottom-4 h-72 drop-shadow-2xl" />
       <div class="relative max-w-sm">
         <p class="text-pink-300 text-xs font-semibold tracking-widest uppercase">Brand &amp; Consumer Culture Case Study</p>
-        <h3 class="font-serif text-2xl md:text-4xl font-semibold text-white mt-1">Labubu &amp; the Pop Mart Playbook</h3>
+        <h3 class="font-serif text-2xl md:text-4xl font-semibold text-white mt-1">PopMart (Labubu) Brand Analysis</h3>
         <p class="text-white/70 text-sm mt-2">An ugly-cute monster that built a $1.95B marketing empire</p>
       </div>
     </div>
@@ -913,6 +1088,31 @@
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-lightbox]').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(btn.getAttribute('data-lightbox'), btn.getAttribute('data-caption')));
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox(); });
 </script>
 </body>
 </html>
